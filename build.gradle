@@ -5,6 +5,7 @@ buildscript {
 }
 plugins {
     id 'org.jetbrains.kotlin.jvm' version '1.5.10'
+    id "org.jetbrains.kotlin.kapt" version "1.6.10"
     id('idea')
     id('java')
     id('io.ebean') version '12.12.1'

@@ -5,25 +5,42 @@
     <title>no title there</title>
 </head>
 <body>
-<script src="https://unpkg.com/axios/dist/axios.min.js">
-    const axios = require('axios');
+<div id="myForm">
+    <label for="userName">Send me your name and age :</label>
+    <input id="userName" name="name" placeholder="ur name">
+    <input id="age" name="age" placeholder="age">
+    <button onclick="createUser()" id="button" type="submit" value="Create User!">save</button>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script>
+<script>
+
     axios.get('/user')
         .then(function (response) {
-            document.write(response);
+            console.log(response);
         })
         .catch(function (error) {
             console.log(error);
         })
-    axios.post('/user', {
-        name: 'Fred',
-        age: 16
-    })
-        .then(function (response) {
-            document.write(response)
+
+    function createUser() {
+        var ageFromForm = parseInt(document.getElementById('age').value)
+        var nameFromForm = document.getElementById('userName').value
+        var buttonFromForm = document.getElementById('button').value
+        console.log(ageFromForm)
+        console.log(nameFromForm)
+        console.log(buttonFromForm)
+        axios.post('/user', {
+            name: nameFromForm,
+            age: ageFromForm
         })
-        .catch(function (error) {
-            console.log(error);
-        });
+            .then(function (response) {
+                document.write(response);
+            })
+            .catch(function (error) {
+                alert(error)
+            });
+    }
+
 </script>
 </body>
 </html>

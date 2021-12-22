@@ -4,6 +4,6 @@ import javax.persistence.Entity
 
 @Entity
 data class UserModel(
-    val age: Byte,
-    val name: String,
+    val age: Int,
+    val name: String
 )

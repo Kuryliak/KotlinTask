@@ -1,7 +1,7 @@
-package controllers
+package pkg.controllers
 
-import exc.AgeToSmallException
-import exc.NameException
+import pkg.exc.AgeToSmallException
+import pkg.exc.NameException
 import io.jooby.Context
 import io.jooby.ErrorHandler
 import io.jooby.StatusCode

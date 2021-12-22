@@ -1,11 +1,15 @@
-import controllers.ExceptionHandler
-import controllers.UserController
+package pkg
+
+import pkg.controllers.ExceptionHandler
+import pkg.controllers.UserController
 import io.jooby.OpenAPIModule
 import io.jooby.json.JacksonModule
 import io.jooby.runApp
+import mu.KotlinLogging
 
 
 fun main(args: Array<String>) {
+    log.debug { "Started" }
     runApp(args) {
         install(OpenAPIModule())
         install(JacksonModule())
@@ -15,3 +19,5 @@ fun main(args: Array<String>) {
         assets("/index","/index.html")
     }
 }
+
+private val log = KotlinLogging.logger {}

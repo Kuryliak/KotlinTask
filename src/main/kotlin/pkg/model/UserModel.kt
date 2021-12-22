@@ -1,4 +1,4 @@
-package model
+package pkg.model
 
 import javax.persistence.Entity
 

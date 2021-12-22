@@ -1,8 +1,8 @@
-package dao
+package pkg.dao
 
-import exc.AgeToSmallException
-import exc.NameException
-import model.UserModel
+import pkg.exc.AgeToSmallException
+import pkg.exc.NameException
+import pkg.model.UserModel
 
 
 open class UserDao : UserDaoInterface<UserModel> {

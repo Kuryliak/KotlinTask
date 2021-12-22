@@ -1,10 +1,10 @@
-package controllers
+package pkg.controllers
 
-import dao.UserDao
+import pkg.dao.UserDao
 import io.jooby.annotations.GET
 import io.jooby.annotations.POST
 import io.jooby.annotations.Path
-import model.UserModel
+import pkg.model.UserModel
 import javax.inject.Inject
 
 @Path("/user")

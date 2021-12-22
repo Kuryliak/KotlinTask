@@ -1,10 +1,10 @@
-//package db
+//package pkg.db
 //
 //import io.ebean.DatabaseFactory
 //import io.ebean.config.DatabaseConfig
 //import io.ebean.datasource.DataSourceConfig
 //
-//fun db() {
+//fun pkg.db() {
 //    val dataSourceConfig = DataSourceConfig()
 //    dataSourceConfig.username = "sa"
 //    dataSourceConfig.password = ""

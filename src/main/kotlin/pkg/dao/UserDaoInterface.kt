@@ -1,4 +1,4 @@
-package dao
+package pkg.dao
 
 interface UserDaoInterface<T> {
 

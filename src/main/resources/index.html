@@ -16,11 +16,9 @@
 
     axios.get('/user')
         .then(function (response) {
-            console.log(response);
-        })
-        .catch(function (error) {
-            console.log(error);
-        })
+            response.userName
+            response.age
+        });
 
     function createUser() {
         var ageFromForm = parseInt(document.getElementById('age').value)
@@ -34,13 +32,21 @@
             age: ageFromForm
         })
             .then(function (response) {
-                document.write(response);
+                window.location.replace("http://localhost:8080/user");
             })
             .catch(function (error) {
-                alert(error)
+                if (error.response) {
+                    alert(JSON.stringify(error.response.data));
+                    console.log(error.response.status);
+                    console.log(error.response.headers);
+                } else if (error.request) {
+                    console.log(error.request);
+                } else {
+                    console.log('Error', error.message);
+                }
+                console.log(error.config);
             });
     }
-
 </script>
 </body>
 </html>

@@ -6,6 +6,7 @@ open class DomainException(
 ) : Exception(message, cause)
 
 open class AgeToSmallException(
+    val minAge: Int?,
     override val message: String,
     override val cause: Throwable? = null
 ) : DomainException(message, cause)

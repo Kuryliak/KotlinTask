@@ -1,14 +1,15 @@
 package pkg.model
 
-import pkg.dao.UserDao
+import pkg.dao.UserDaoInterface
 import pkg.exc.AgeToSmallException
 import pkg.exc.NameException
 import javax.inject.Inject
 import javax.inject.Singleton
 
+// TODO: dependency inversion
 @Singleton
 open class UserService @Inject constructor(
-    private val userDao: UserDao
+    private val userDao: UserDaoInterface<UserModel>
 ) {
     fun allUsers() = userDao.getAllUsers
 

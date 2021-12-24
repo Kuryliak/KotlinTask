@@ -2,12 +2,11 @@ package pkg.model
 
 import dagger.Component
 import pkg.controllers.UserController
-import pkg.dao.UserDao
 import javax.inject.Singleton
 
 @Singleton
-@Component // the same as @Configuration in Spring
+@Component(modules = [ AppModule::class ]) // Like ApplicationContext
 interface AppComponent {
-    // the same as @Bean
+    // like getBean(UserController::class)
     fun getUserController(): UserController
 }

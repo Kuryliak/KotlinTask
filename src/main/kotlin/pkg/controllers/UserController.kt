@@ -1,6 +1,5 @@
 package pkg.controllers
 
-import pkg.dao.UserDao
 import io.jooby.annotations.GET
 import io.jooby.annotations.POST
 import io.jooby.annotations.Path

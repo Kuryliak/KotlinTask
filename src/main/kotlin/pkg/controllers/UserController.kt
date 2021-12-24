@@ -13,7 +13,7 @@ class UserController @Inject constructor(
     private val userService: UserService
 ) {
     @GET
-    fun getUser() = userService.getAllUsers
+    fun getUser() = userService.allUsers()
 
     @POST
     fun saveUser(userModel: UserModel) = userService.save(userModel)

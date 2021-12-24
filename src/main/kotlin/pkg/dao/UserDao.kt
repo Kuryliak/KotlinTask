@@ -1,8 +1,9 @@
 package pkg.dao
 
 import pkg.model.UserModel
+import javax.inject.Inject
 
-open class UserDao : UserDaoInterface<UserModel> {
+open class UserDao @Inject constructor() : UserDaoInterface<UserModel> {
     private val users: MutableList<UserModel> = ArrayList()
 
     override val getAllUsers: List<UserModel>?

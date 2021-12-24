@@ -5,15 +5,16 @@ import io.jooby.annotations.GET
 import io.jooby.annotations.POST
 import io.jooby.annotations.Path
 import pkg.model.UserModel
+import pkg.model.UserService
 import javax.inject.Inject
 
 @Path("/user")
 class UserController @Inject constructor(
-    private val userDao: UserDao = UserDao()
+    private val userService: UserService
 ) {
     @GET
-    fun getUser() = userDao.getAllUsers
+    fun getUser() = userService.getAllUsers
 
     @POST
-    fun saveUser(userModel: UserModel) = userDao.save(userModel)
+    fun saveUser(userModel: UserModel) = userService.save(userModel)
 }

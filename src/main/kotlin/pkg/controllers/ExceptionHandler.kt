@@ -6,8 +6,6 @@ import io.jooby.Context
 import io.jooby.ErrorHandler
 import io.jooby.StatusCode
 import mu.KotlinLogging
-import pkg.dto.ErrorDto
-
 object ExceptionHandler : ErrorHandler {
     override fun apply(ctx: Context, cause: Throwable, code: StatusCode) {
         if (cause is Exception) {
@@ -21,7 +19,7 @@ object ExceptionHandler : ErrorHandler {
             is NameException -> ctx.responseCode = StatusCode.BAD_REQUEST
             else -> ctx.responseCode = StatusCode.SERVER_ERROR
         }
-        ctx.render(ErrorDto.fromException(cause))
+        ctx.render(MainErrorDto.fromException(cause))
 
     }
 

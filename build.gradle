@@ -33,6 +33,7 @@ dependencies {
     implementation 'com.fasterxml.jackson.module:jackson-module-kotlin:2.13.1'
     implementation "io.jooby:jooby:2.11.0"
     implementation "io.ebean:ebean:12.13.2"
+    kapt "com.google.dagger:dagger-compiler:2.40.5"
     kapt "io.jooby:jooby-apt:2.11.0"
     annotationProcessor 'io.ebean:querybean-generator:12.13.1'
 }

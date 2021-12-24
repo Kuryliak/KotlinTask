@@ -13,6 +13,3 @@ open class UserDao @Inject constructor() : UserDaoInterface<UserModel> {
         users.add(usr)
     }
 }
-
-
-

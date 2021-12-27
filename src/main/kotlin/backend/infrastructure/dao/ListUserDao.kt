@@ -1,4 +1,4 @@
-package backend.domain.dao
+package backend.infrastructure.dao
 
 import backend.infrastructure.api.common.UserDTO
 import javax.inject.Inject

@@ -1,4 +1,4 @@
-package backend.domain.dao
+package backend.infrastructure.dao
 
 import backend.domain.UserModel
 import io.ebean.Database

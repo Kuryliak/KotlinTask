@@ -1,4 +1,4 @@
-package backend.domain
+package backend.infrastructure.config
 
 import dagger.Component
 import backend.infrastructure.api.UserController

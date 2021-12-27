@@ -1,8 +1,7 @@
-package pkg.model
+package backend.infrastructure.api.common
 
+import backend.domain.UserModel
 import javax.inject.Inject
-
-
 class Mapper @Inject constructor() {
     fun toDto(user: UserModel): UserDTO {
         val name: String = user.name

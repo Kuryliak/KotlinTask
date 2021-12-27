@@ -1,4 +1,4 @@
-package pkg.dao
+package backend.domain.dao
 
 interface Dao<T> {
     val getUsers: List<T>?

@@ -1,6 +1,6 @@
-package pkg.dao
+package backend.domain.dao
 
-import pkg.model.UserDTO
+import backend.infrastructure.api.common.UserDTO
 import javax.inject.Inject
 
 open class ListUserDao @Inject constructor() : Dao<UserDTO> {

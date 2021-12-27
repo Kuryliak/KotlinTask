@@ -1,10 +1,10 @@
-package pkg.controllers
+package backend.infrastructure.api.common
 
 import com.fasterxml.jackson.annotation.JsonInclude
-import pkg.exception.AgeToSmallException
-import pkg.exception.NameException
+import backend.exception.AgeToSmallException
+import backend.exception.NameException
 
-data class MainErrorDto(
+data class MainErrorDTO(
     val code: String,
     val message: String?,
     @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -12,14 +12,14 @@ data class MainErrorDto(
 ) {
     companion object {
         fun fromException(th: Throwable) = when (th) {
-            is AgeToSmallException -> MainErrorDto(th.message, th.localizedMessage, th.minAge)
-            is NameException -> MainErrorDto(
+            is AgeToSmallException -> MainErrorDTO(th.message, th.localizedMessage, th.minAge)
+            is NameException -> MainErrorDTO(
                 "WRONG NAME",
                 "NAME SHOULD CONTAINS MORE THAN 1 WORD",
                 null
             )
             else -> {
-                MainErrorDto(
+                MainErrorDTO(
                     "SERVER_ERROR",
                     "SERVER_ERROR_FIX_SOMETHING",
                     null

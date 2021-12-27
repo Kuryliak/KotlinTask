@@ -1,4 +1,4 @@
-package pkg.model
+package backend.domain
 
 import javax.persistence.Entity
 

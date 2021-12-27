@@ -26,7 +26,7 @@ dependencies {
     testImplementation 'io.ebean:ebean-test:12.13.2'
     implementation 'com.google.dagger:dagger:2.40.5'
     implementation 'io.github.microutils:kotlin-logging-jvm:2.1.16'
-    implementation "com.h2database:h2:2.0.202"
+    implementation "com.h2database:h2:1.4.200"
     implementation "ch.qos.logback:logback-classic:1.2.9"
 
     implementation 'io.jooby:jooby-jetty:2.11.0'

@@ -1,12 +1,12 @@
-package pkg
+package backend.infrastructure
 
 import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
 import io.jooby.OpenAPIModule
 import io.jooby.json.JacksonModule
 import io.jooby.runApp
 import mu.KotlinLogging
-import pkg.controllers.ExceptionHandler
-import pkg.model.DaggerAppComponent
+import backend.infrastructure.helper.ExceptionHandler
+import backend.domain.DaggerAppComponent
 
 
 fun main(args: Array<String>) {

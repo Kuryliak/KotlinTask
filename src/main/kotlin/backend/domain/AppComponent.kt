@@ -1,7 +1,7 @@
-package pkg.model
+package backend.domain
 
 import dagger.Component
-import pkg.controllers.UserController
+import backend.infrastructure.api.UserController
 import javax.inject.Singleton
 
 @Singleton

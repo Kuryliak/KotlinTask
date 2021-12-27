@@ -29,7 +29,7 @@
             })
             .catch(function (error) {
                 if (error.response) {
-                    alert(JSON.stringify(error.response.data));
+                    alert("Minimal age is : " + error.response.data.minAge);
                     console.log(error.response.status);
                     console.log(error.response.headers);
                 } else if (error.request) {

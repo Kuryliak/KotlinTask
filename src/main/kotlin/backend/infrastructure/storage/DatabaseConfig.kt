@@ -1,4 +1,4 @@
-package pkg.storage
+package backend.infrastructure.storage
 
 import io.ebean.DB
 import io.ebean.Database

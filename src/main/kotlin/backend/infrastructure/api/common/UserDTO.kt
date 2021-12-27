@@ -1,8 +1,5 @@
-package pkg.model
+package backend.infrastructure.api.common
 
-import javax.persistence.Entity
-
-@Entity
 data class UserDTO(
     val name: String,
     val age: Int,

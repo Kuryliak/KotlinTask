@@ -1,8 +1,8 @@
 package backend.infrastructure.api.common
 
 import com.fasterxml.jackson.annotation.JsonInclude
-import backend.exception.AgeToSmallException
-import backend.exception.NameException
+import backend.domain.AgeToSmallException
+import backend.domain.NameException
 
 data class MainErrorDTO(
     val code: String,

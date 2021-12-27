@@ -1,14 +1,15 @@
 package backend.infrastructure.dao
 
 import backend.domain.UserModel
+import backend.infrastructure.api.common.UserDTO
 import io.ebean.Database
 import javax.inject.Inject
 
-open class EbeanUserDao @Inject constructor(private val database: Database) : Dao<UserModel> {
-    override val getUsers: List<UserModel>?
-        get() = database.find(UserModel::class.java).findList()
+open class EbeanUserDao @Inject constructor(private val database: Database) : Dao<UserDTO> {
+    override val getUsers: List<UserDTO>?
+        get() = database.find(UserDTO::class.java).findList()
 
-    override fun save(usr: UserModel) {
+    override fun save(usr: UserDTO) {
         database.save(usr)
     }
 }

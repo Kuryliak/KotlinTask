@@ -1,15 +1,16 @@
 package backend.app
 
 import backend.infrastructure.dao.Dao
-import backend.exception.AgeToSmallException
-import backend.exception.NameException
+import backend.domain.AgeToSmallException
+import backend.domain.NameException
 import backend.domain.UserModel
 import backend.infrastructure.api.common.Mapper
 import backend.infrastructure.api.common.UserDTO
 import javax.inject.Inject
 
 open class UserService @Inject constructor(
-    private val userDao: Dao<UserModel>,
+    private val userDao: Dao<UserDTO>,
+    private val mapper: Mapper
 ) {
     fun allUsers() {
         userDao.getUsers
@@ -22,7 +23,9 @@ open class UserService @Inject constructor(
         if (!usr.name.trim().any { it.isWhitespace() }) {
             throw NameException("name should contain 2 words")
         }
-        userDao.save(usr)
+        val mapperUser = mapper.toUser(usr)
+
+        userDao.save(mapperUser)
     }
 
     companion object {

@@ -1,10 +1,10 @@
 package backend.infrastructure.api
 
+import backend.app.UserService
+import backend.domain.UserModel
 import io.jooby.annotations.GET
 import io.jooby.annotations.POST
 import io.jooby.annotations.Path
-import backend.domain.UserModel
-import backend.app.UserService
 import javax.inject.Inject
 
 @Path("/user")

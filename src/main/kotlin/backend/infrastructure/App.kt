@@ -6,7 +6,7 @@ import io.jooby.json.JacksonModule
 import io.jooby.runApp
 import mu.KotlinLogging
 import backend.infrastructure.helper.ExceptionHandler
-import backend.domain.DaggerAppComponent
+import backend.infrastructure.config.DaggerAppComponent
 
 
 fun main(args: Array<String>) {

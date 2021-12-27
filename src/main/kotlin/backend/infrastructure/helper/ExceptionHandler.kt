@@ -4,7 +4,7 @@ import io.jooby.Context
 import io.jooby.ErrorHandler
 import io.jooby.StatusCode
 import mu.KotlinLogging
-import backend.exception.DomainException
+import backend.domain.DomainException
 import backend.infrastructure.api.common.MainErrorDTO
 
 object ExceptionHandler : ErrorHandler {

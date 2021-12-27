@@ -1,9 +1,5 @@
 package backend.domain
 
-import backend.app.UserService
-import backend.exception.AgeToSmallException
-import backend.exception.NameException
-
 data class UserModel(
     val age: Int,
     val name: String

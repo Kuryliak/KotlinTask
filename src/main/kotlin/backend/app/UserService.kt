@@ -8,8 +8,9 @@ open class UserService @Inject constructor(
 ) {
     fun getAllUsers() = userDao.getUsers()
 
-    fun save(usr: UserModel): UserModel {
-        userDao.save(usr)
-        return usr
+    fun save(age: Int, name: String): UserModel {
+        val user = UserModel.createValidated(age, name)
+        userDao.save(user)
+        return user
     }
 }

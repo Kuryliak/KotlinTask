@@ -1,11 +1,11 @@
 package backend.infrastructure.api
 
+import backend.domain.DomainException
+import backend.infrastructure.api.dto.MainErrorDTO
 import io.jooby.Context
 import io.jooby.ErrorHandler
 import io.jooby.StatusCode
 import mu.KotlinLogging
-import backend.exception.DomainException
-import backend.infrastructure.api.dto.MainErrorDTO
 
 object ExceptionHandler : ErrorHandler {
     override fun apply(ctx: Context, cause: Throwable, code: StatusCode) {

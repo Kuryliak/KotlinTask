@@ -23,9 +23,9 @@ open class UserService @Inject constructor(
         if (!usr.name.trim().any { it.isWhitespace() }) {
             throw NameException("name should contain 2 words")
         }
-        val mapperUser = mapper.toUser(usr)
+        val mappedUser = mapper.toUser(usr)
 
-        userDao.save(mapperUser)
+        userDao.save(mappedUser)
     }
 
     companion object {

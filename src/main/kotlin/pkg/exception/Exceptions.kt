@@ -1,4 +1,4 @@
-package pkg.exc
+package pkg.exception
 
 open class DomainException(
     override val message: String,

@@ -2,11 +2,16 @@ package pkg.model
 
 import dagger.Module
 import dagger.Provides
-import pkg.dao.UserDao
-import pkg.dao.UserDaoInterface
+import io.ebean.Database
+import pkg.dao.Dao
+import pkg.dao.EbeanUserDao
+import pkg.storage.DatabaseConfig
 
 @Module
 class AppModule {
     @Provides
-    fun blindDao(userDao: UserDao): UserDaoInterface<UserModel> = userDao
+    fun blindDao(ebeanUserDao: EbeanUserDao): Dao<UserModel> = ebeanUserDao
+
+    @Provides
+    fun database() = DatabaseConfig.database
 }

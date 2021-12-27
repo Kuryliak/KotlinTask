@@ -1,15 +1,14 @@
 package pkg.controllers
 
 import com.fasterxml.jackson.annotation.JsonInclude
-import pkg.exc.AgeToSmallException
-import pkg.exc.NameException
+import pkg.exception.AgeToSmallException
+import pkg.exception.NameException
 
-@JsonInclude(JsonInclude.Include.NON_NULL)
 data class MainErrorDto(
     val code: String,
     val message: String?,
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     val minAge: Int?
-
 ) {
     companion object {
         fun fromException(th: Throwable) = when (th) {
@@ -22,7 +21,7 @@ data class MainErrorDto(
             else -> {
                 MainErrorDto(
                     "SERVER_ERROR",
-                    "SOME_SERVER_ERROR_IDK",
+                    "SERVER_ERROR_FIX_SOMETHING",
                     null
                 )
             }

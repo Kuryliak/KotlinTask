@@ -1,6 +1,6 @@
 package pkg.dao
 
-interface UserDaoInterface<T> {
+interface Dao<T> {
     val getUsers: List<T>?
     fun save(t: T)
 }

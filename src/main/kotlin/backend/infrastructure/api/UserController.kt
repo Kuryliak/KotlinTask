@@ -17,7 +17,7 @@ class UserController @Inject constructor(
 
     @POST
     fun saveUser(request: UserDTO): UserDTO {
-        val result = userService.save(request.age, request.name)
+        val result = userService.save(request.age, request.fullName)
         return UserDTO.fromDomain(result)
     }
 }

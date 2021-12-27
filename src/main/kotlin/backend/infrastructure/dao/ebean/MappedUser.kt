@@ -8,9 +8,9 @@ import javax.persistence.Id
 data class MappedUser(
     @Id
     val name: String,
-    val age: Int,
+    val userAge: Int,
 ) {
-    fun toDomain() = UserModel(age, name)
+    fun toDomain() = UserModel(userAge, name)
 
     companion object {
         fun fromDomain(userModel: UserModel) = MappedUser(userModel.name, userModel.age)

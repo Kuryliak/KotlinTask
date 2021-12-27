@@ -3,9 +3,8 @@ package backend.infrastructure.config
 import backend.domain.UserModel
 import dagger.Module
 import dagger.Provides
-import backend.infrastructure.dao.Dao
-import backend.infrastructure.dao.EbeanUserDao
-import backend.infrastructure.storage.DatabaseConfig
+import backend.app.Dao
+import backend.infrastructure.dao.ebean.EbeanUserDao
 
 @Module
 class AppModule {

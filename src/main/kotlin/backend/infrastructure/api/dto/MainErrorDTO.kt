@@ -1,4 +1,4 @@
-package backend.infrastructure.api.common
+package backend.infrastructure.api.dto
 
 import com.fasterxml.jackson.annotation.JsonInclude
 import backend.exception.AgeToSmallException

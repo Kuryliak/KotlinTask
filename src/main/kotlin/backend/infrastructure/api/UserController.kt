@@ -13,7 +13,7 @@ class UserController @Inject constructor(
 ) {
     @GET
     fun getUser() = userService.getAllUsers()
-        .map(UserDTO.Companion::fromDomain)
+        .map(UserDTO::fromDomain)
 
     @POST
     fun saveUser(request: UserDTO): UserDTO {

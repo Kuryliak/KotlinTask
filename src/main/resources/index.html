@@ -21,7 +21,7 @@
         console.log(nameFromForm)
         console.log(buttonFromForm)
         axios.post('/user', {
-            name: nameFromForm,
+            fullName: nameFromForm,
             age: ageFromForm
         })
             .then(function (response) {

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>no title there</title>
+</head>
+<body>
+<div id="myForm">
+    <label for="userName">Send me your name and age :</label>
+    <input id="userName" name="name" placeholder="ur name">
+    <input id="age" name="age" placeholder="age">
+    <button onclick="createUser()" id="button" type="submit" value="Create User!">save</button>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script>
+<script>
+    function createUser() {
+        var ageFromForm = parseInt(document.getElementById('age').value)
+        var nameFromForm = document.getElementById('userName').value
+        var buttonFromForm = document.getElementById('button').value
+        console.log(ageFromForm)
+        console.log(nameFromForm)
+        console.log(buttonFromForm)
+        axios.post('/user', {
+            fullName: nameFromForm,
+            age: ageFromForm
+        })
+            .then(function (response) {
+                document.write("age : " + ageFromForm + " " + "name : " + nameFromForm)
+            })
+            .catch(function (error) {
+                if (error.response) {
+                    alert("Minimal age is : " + error.response.data.minAge);
+                    console.log(error.response.status);
+                    console.log(error.response.headers);
+                } else if (error.request) {
+                    console.log(error.request);
+                } else {
+                    console.log('Error', error.message);
+                }
+                console.log(error.config);
+            });
+    }
+</script>
+</body>
+</html>

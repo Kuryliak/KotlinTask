@@ -1,0 +1,16 @@
+package backend.infrastructure.config
+
+import backend.domain.UserModel
+import dagger.Module
+import dagger.Provides
+import backend.app.Dao
+import backend.infrastructure.dao.ebean.EbeanUserDao
+
+@Module
+class AppModule {
+    @Provides
+    fun bindDao(ebeanUserDao: EbeanUserDao): Dao<UserModel> = ebeanUserDao
+
+    @Provides
+    fun database() = DatabaseConfig.database
+}
